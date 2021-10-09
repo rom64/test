@@ -240,5 +240,88 @@ button {
     line-height: 16px;
   }
 }
+.modal{
+  display: none;
+  position: fixed;
+  top: calc(50vh - 140px);
+  left: calc(50% - 245px);
+  max-width: 490px;
+  max-height: 280px;
+  padding: 50px 45px 54px;
+  border-radius: 5px;
+  background-color: $grey;
+  z-index: 200;
+  &__inner{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__top-title{
+    margin: 0 auto 13px;
+  }
+  &__form-close{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+  }
+  &__input{
+    border: none;
+    padding: 11px 25px;
+    font-size: 14px;
+    line-height: 18px;
+  }
+  &__input{
+    width: 100%;
+    margin-bottom: 9px;
+  }
+  &__btn{
+    width: 100%;
+    background-color: $dark;
+    color: #fff;
+    padding: 10px;
+    transition: all 0.5s ease;
+    &:hover{
+      color: $orange;
+    }
+  }
+}
+.fadeIn, .fadeOut{
+  animation-duration: 1s;
+  animation-timing-function: linear;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    visibility: hidden;
+  }
+  to {
+    opacity:1;
+    visibility: visible;
+  }
+}
+.fadeIn {
+  animation-name: fadeIn;
+  opacity: 1;
+  visibility: visible;
+}
 
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    visibility: visible;
+  }
+  to {
+    opacity:0;
+    visibility: hidden;
+  }
+}
+.fadeOut {
+  animation-name: fadeOut;
+  opacity: 0;
+  visibility: hidden;
+}
+input:invalid {
+  border-color: red;
+}
 @import "media";

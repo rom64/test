@@ -250,7 +250,17 @@
             </div>
         </section>
     </main>
-
+    <section id="modal" class="modal">
+        <div class="modal__inner">
+            <h3 class="modal__top-title">Sign in</h3>
+            <form action="#" class="modal__form">
+                <div data-close class="modal__form-close">&times;</div>
+                <input type="text" class="modal__input name" placeholder="Login" required minlength="2">
+                <input type="text" class="modal__input password" placeholder="Password" required minlength="6">
+                <button class="modal__btn">Sign in</button>
+            </form>
+        </div>
+    </section>
 
     <script src="js/main.min.js"></script>
 </body>

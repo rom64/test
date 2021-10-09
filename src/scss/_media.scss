@@ -61,6 +61,12 @@
     font-size: 12px;
     padding: 6px;
   }
+  .modal{
+    max-width: 400px;
+    max-height: 280px;
+    left: calc(50% - 200px);
+  }
+
 }
 @media (max-width: 480px){
   .promo__wrapper{
@@ -70,11 +76,17 @@
   .promo__right{
     display: flex;
   }
+
   .news__item{
     margin-bottom: 100px;
   }
   .news__item + .news__item{
     margin-left: 0;
+  }
+  .modal{
+    max-width: 360px;
+    max-height: 280px;
+    left: calc(50% - 180px);
   }
 }
 @media (max-width: 376px){
