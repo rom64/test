@@ -49,4 +49,32 @@ window.addEventListener('DOMContentLoaded', function(){
         }
     }
     modalBtn.addEventListener('click', validate);
+    /*slider*/
+    const slides = document.querySelectorAll('.promo__left-item'),
+        prev = document.querySelector('.promo__left-left'),
+        next = document.querySelector('.promo__left-right');
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function showSlides(n){
+        if(n > slides.length){
+            slideIndex = 1;
+        }
+        if(n < 1){
+            slideIndex = slides.length;
+        }
+        slides.forEach(item =>{
+            item.style.display="none";
+            slides[slideIndex -1].style.display="block";
+        })
+    }
+    function plusSlide(n){
+        showSlides(slideIndex += n);
+    }
+    prev.addEventListener('click', ()=>{
+        plusSlide(-1);
+    } );
+    next.addEventListener('click', ()=>{
+        plusSlide(1);
+    } );
 });
