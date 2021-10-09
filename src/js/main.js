@@ -21,4 +21,32 @@ window.addEventListener('DOMContentLoaded', function(){
             closeModal();
         }
     })
+    /*validate*/
+
+    const userName = document.querySelector(".name");
+    const userPassword = document.querySelector(".password");
+    const modalBtn = document.querySelector('.modal__btn');
+
+    function validate(){
+        let errors = '';
+        if(userName.value === '' || userPassword.value ===''){
+            alert(' заполните все поля ');
+        }if(userName.value.length < 2){
+            errors +='имя должно содержать не менее 2 символов \n';
+            userName.style.border ='3px solid #ff0000';
+        }if(userPassword.value.length < 6){
+            errors +=' пароль должен содержать не менее 6 символов \n ';
+            userPassword.style.border ='3px solid #ff0000';
+        }
+        if(errors ===""){
+            console.log('ok');
+            return true;
+        }
+        else
+        {
+            alert(errors);
+            return false;
+        }
+    }
+    modalBtn.addEventListener('click', validate);
 });
